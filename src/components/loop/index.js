@@ -4,7 +4,7 @@ import './index.css';
 function LiComponents (props) {
   let val = props.value;
   return (
-    <li>{ val }</li>
+    <li className="liCom">{ val }</li>
   )
 };
 function UlComponents (props) {

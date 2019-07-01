@@ -1,0 +1,11 @@
+.loading-container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(256, 256, 256, 0.2);
+}
+.loading-text{
+  color: #ffffff;
+}

@@ -1,16 +1,19 @@
-import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+// synchronous components
+import Loading from '../components/loading/index.js';
 
-import Home from '../pages/home/index.js';
-import App from '../pages/app/index.js';
+// asynchronous components
+const Home = lazy(() => import('../pages/home/index.js'));
+const App = lazy(() => import('../pages/app/index.js'));
 
 const BasicRoute = () => (
-  <HashRouter>
-      <Switch>
-          <Route exact path="/" component={App}/>
-          <Route exact path="/home" component={Home}/>
-      </Switch>
-  </HashRouter>
+  <Router> 
+    <Suspense fallback={<Loading />}>
+      <Route exact path="/" component={App}/>
+      <Route path="/home/:id" component={Home}/>
+    </Suspense>
+  </Router>
 );
 
 
