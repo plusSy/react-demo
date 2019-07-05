@@ -5,6 +5,7 @@ import './index.css';
 import Clock from '../../components/clock/index';
 import Toggle from '../../components/toggle/index';
 import Loop from '../../components/loop/index';
+import ThemeButton from '../../components/button/index';
 
 export default class Home extends React.Component{
   constructor (props) {
@@ -26,7 +27,14 @@ export default class Home extends React.Component{
         <Loop val={['1', '2', '3', '4']} />
 
         <button onClick={() => this.props.history.push('/')}>跳转首页</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button onClick={() => this.props.history.push('/refs')}>跳转Refs</button>
+
+        <hr/>
+        
+        <ThemeButton text="submit" theme="light"/>
+        
       </div>
     )
-  }
+  };
 }

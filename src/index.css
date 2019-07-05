@@ -18,3 +18,8 @@ code {
   text-decoration: none;
   margin-top: 20px;
 }
+button{
+  background-color: cadetblue;
+  border: none;
+  padding: 5px 15px;
+}
